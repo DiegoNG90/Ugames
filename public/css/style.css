@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Staatliches', cursive;
+}
+body{
+    background-color: #343a40;
+}
+/* Navbar */
+.nav-link{
+    color: white !important;
+    font-family: 'Staatliches', cursive;
+}
+.navbar-brand {
+    color: white !important;
+    max-width: 40%;
+}
+.form-inline{
+    margin: auto;
+    width: 100%;
+}
+#search-input{
+    font-family: 'Staatliches', cursive;
+}
+
+@media (min-width: 300px) and (max-width: 990px){
+    #navbarNav{
+        justify-content: center !important;
+    }
+}
+
+/* Carousel */
+h5{
+    font-size: 3rem;
+    color: azure;
+}
+.parrafos-carousel{
+    font-size: 2rem;
+}
+
+/* #p-halo{
+
+} */
+#p-gotham{
+    color:darkgoldenrod;
+    border-color: gold;
+}
+#p-ghostwire{
+    color: crimson;
+}
+
+/* Tabla de catalogo */
+.oculto{
+    display:none;
+}
+th{
+    color: rgba(206, 10, 10, 0.822);
+    background-color: #343a40;
+    font-size: 1.3rem;
+}
+#t-catalogo{
+    color:white;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+.fa-shopping-cart{
+    color: whitesmoke;
+    background-color: #343a40;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.fa-filter{
+    background-color: #343a40;
+    color: #a10c1d;
+    font-size: 1.5em;
+    
+}
+.fa-filter:hover{
+    cursor: pointer;
+    color: #77b912;
+
+    
+}:
+.tabla-titulo-juego{
+    font-size: 1.25rem;
+}
+#label-filtro{
+    color:whitesmoke;
+    font-size: 1.3rem;
+    padding-right: 1.5rem;
+}
+#filtro-genero{
+    border-radius: 3rem;
+    width: 15rem;
+    height: 1.7rem;
+}
+#filtro-genero, a{
+    padding-left: 2rem;
+    /* height: 2rem; */
+}
+
+/* Plantilla */
+.imagen-juego img{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-top: 5rem;
+    border-color: #75b811;
+    background-color: #75b811;
+    padding: 0.10rem;
+    border-radius: 1rem;
+}
+.descripcion-juego{
+    margin-top: 5rem;
+    color: white;
+}
+.plantilla-parrafo{
+    margin-top: 3.5rem;
+}
+.btn-success{
+    background-color: #28a74536;
+}
+.btn-primary{
+    background-color:#274a70 ;
+    /* margin-top: 1rem; */
+}
+.btn-primary .fa-shopping-cart{
+    
+    background-color: #274a70;
+}
+/* .botones-plantilla{
+
+} */
