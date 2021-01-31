@@ -11,6 +11,7 @@ hbs.registerPartials(__dirname+"/views/partials")
 
 app.get('/', (req,res) => {
     res.render("home",{
+        //EJEMPLO: ésta data no está realmente en uso, sólo para recordar que se pueden pasar datos de ésta manera.
         anio: new Date().getFullYear(),
         titulo: "Ugames",
         catalogo: `${__dirname}/views/catalogo`,
