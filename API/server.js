@@ -12,8 +12,16 @@ hbs.registerPartials(__dirname+"/views/partials")
 app.get('/', (req,res) => {
     res.render("home",{
         anio: new Date().getFullYear(),
-        titulo: "Ugames"
+        titulo: "Ugames",
+        catalogo: `${__dirname}/views/catalogo`,
+        plantilla: ""
     })
+})
+app.get('/catalogo', (req,res) => {
+    res.render("catalogo")
+})
+app.get('/plantilla', (req,res) => {
+    res.render("plantilla")
 })
 
 app.listen(port, ()=> console.log("Escuchando en puerto " + port));
