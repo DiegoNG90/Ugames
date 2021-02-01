@@ -129,6 +129,9 @@ th{
     
     background-color: #274a70;
 }
-/* .botones-plantilla{
 
-} */
+
+/*  Bilbioteca */
+.card-button{
+    color: green !important;
+}
