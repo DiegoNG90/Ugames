@@ -39,6 +39,9 @@
                       <a class="nav-link" href="catalogo.html">Catalogo <i class="fas fa-gamepad"></i><span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="biblioteca.html">Biblioteca <i class="fas fa-swatchbook"></i></a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="#">Carrito <i class="fas fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item">
@@ -46,11 +49,40 @@
                     </li>
                   </ul>
                 </div>
+                <a href=""><i class="fas fa-power-off"></i></a>
               </nav>
               </div>
         </header>
     </section>
 
+
+    <section class="d-flex justify-content-center formulario-contacto">
+
+        <div class="align-middle jumbotron jumbotron-contacto">
+          <h1 class="display-4 titulo-contacto">Escribamonos</h1>
+          <p class="lead parrafo-contacto"> Hola, somos Joaquín, Julian y Diego y Ugames se trata de un proyecto colaborativo donde construimos una plataforma de ecommerce para juegos de PC. Si estás acá, queremos agradecerte por tomarte el tiempo de recorrer la web. Cualquier sugerencia, pregunta o comentario respecto a la web será bien recibida.</p>
+        
+          <form action="" method="POST">
+            <div class="form-group">
+              <label class="labels-form" for="nombre" >Nombre</label>
+                <input class="form-control" type="text" name="Nombre" placeholder="Escribi tu nombre">
+            </div>
+            <div class="form-group">
+              <label class="labels-form" for="apellido">Apellido</label>
+                <input class="form-control" type="text" name="Apellido" placeholder="Escribi tu apellido">
+            </div>
+            <div class="form-group">
+              <label class="labels-form" for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="Email" placeholder="nombre@servidor.com">
+            </div>
+            <div class="form-group">
+              <label class="labels-form" for="comentario">Escribe tu comentario</label>
+              <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg boton-form" href="#" role="button">Enviar</button>
+          </form>
+        </div>
+      </section>
 
     <!-- Jquery, Pooper and Bootstrap.js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
