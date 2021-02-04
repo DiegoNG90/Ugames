@@ -136,6 +136,12 @@ th{
 
 /*JULK*/
 
+/* Logo landing */
+.imagen{
+    margin-top: 20%;
+    margin-bottom: 5%;
+}
+
 /* Boton login */
 .boton{
     background: #050801;
