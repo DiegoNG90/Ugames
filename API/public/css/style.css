@@ -132,3 +132,243 @@ th{
 /* .botones-plantilla{
 
 } */
+
+
+/*JULK*/
+
+.boton{
+    background: #050801;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin-top: -70%;
+    margin-left: 50%;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+   
+}
+
+.boton:hover{
+    background: #03e9f4;
+    
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    
+
+}
+
+.boton:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+.boton:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+.modal-body {
+    background-color: #2fc800;
+}
+
+.form-group{
+    color: white;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+.sign-with {
+    margin-top: -10px;
+    padding: 20px;
+}
+div#OR {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
+}
+
+
+h3{
+    text-align: center;
+    color: white !important;
+    font-family: 'Staatliches', cursive;
+    margin-top: 3rem;
+}
+
+div.header{
+   border-bottom: 1px solid #C51111;
+   display: block;
+   margin-top: -15px;
+   margin-bottom: 21px;
+}
+
+#email-label{
+    color: white !important;
+    font-family: 'Staatliches', cursive;
+}
+
+#email-element{
+    text-align: center;
+    
+}
+
+#email{
+    padding: 0 50px;  
+}
+
+#Recuperar-element{
+    text-align: center;
+}
+
+#Recuperar{
+    padding: 5px;
+}
+
+.btn-group-justified1{
+    width: 30%;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width:1024px){
+    .boton {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 15%;
+    margin-left: 48%; 
+      }
+}
+
+@media (max-width:950px){
+    .boton {
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    margin-bottom: 15%;
+    margin-left: 48%; 
+      }
+}
+
+
+@media (max-width:768px){
+    .boton {
+        font-size: 1rem;
+        padding: 1rem;
+        margin-bottom: 15%;
+        margin-left: 48%;
+      }
+      .sign-with {
+        margin-top: -45px;
+        margin-left: -35px;
+        padding: 20px;
+    }
+}
+
+@media (max-width:550px){
+    .boton {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+        margin-bottom: 15%;
+        margin-left: 42%;
+      }
+}
+
+@media (max-width:320px){
+    .boton {
+        font-size: 0.6rem;
+        padding: 0.6rem;
+        margin-bottom: 12%;
+        margin-left: 42%;
+      }
+}
