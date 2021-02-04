@@ -55,8 +55,8 @@ h5{
     display:none;
 }
 th{
-    color: rgba(206, 10, 10, 0.822);
-    background-color: #343a40;
+    color: rgba(255, 255, 255, 0.822);
+    background-color: crimson;
     font-size: 1.3rem;
 }
 #t-catalogo{
