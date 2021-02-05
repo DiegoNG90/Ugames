@@ -4,6 +4,8 @@ const port = 8080;
 const path = require('path');
 const hbs = require('hbs');
 const session = require('express-session');
+const mysql = require('mysql');
+const MySQLStore = require('express-mysql-session')(session);
 
 app.use(session({
     secret: "triplete de messi al real",
