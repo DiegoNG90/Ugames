@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    
+  <div class="container">
     <!-- Navbar -->
     <section>
         <header>
@@ -58,7 +60,6 @@
             </div>
             <div class="card-body">
                 <form id="formulario-add">
-                    <div class="form-group">
                       <label for="nombJ">Nombre</label>
                       <input type="text" name="nombJ" id="nombJ" class="form-control" id="exampleInputEmail1">
 
@@ -71,20 +72,33 @@
 
                       
                       <label for="costoJ">Costo</label>
-                      <input type="text" name="costoJ" id="costoJ" class="form-control" id="exampleInputEmail1">
+                      <input type="number" name="costoJ" id="costoJ" class="form-control" id="exampleInputEmail1">
 
                       
                       <label for="imgJ">Imagen</label>
                       <input type="text" name="imgJ" id="imgJ" class="form-control" id="exampleInputEmail1">
 
-                    </div>
                   
                     <button type="submit" class="btn btn-primary">Enviar</button>
+                    
                   </form>
           </div>
+        </div>
+      
 
-        
+        <div class="container">
+        <ul id="listajuegos">
+
+        </ul>
+      </div>
+      
+      </div>
+
+    </div>
     </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="./js/eliminar.js"></script>
     <script src="./js/add.js"></script>
 </body>
 </html>

@@ -15,10 +15,10 @@ const obtenerJuegos=(req,res)=>{
 const agregarJuego = (req,res)=>{
     let {nombJ,descJ,tipoJ,costoJ,imgJ} = req.body;
     // console.log(req.body)
-    conexion_db.query('INSERT INTO `t_juegos`(`nombreJuego`, `descJuego`,`tipoJuego`,`costoJuego`,`imgJuego`) VALUES (?,?,?,?,?)',[nombJ,descJ,tipoJ,costoJ,imgJ],(err,results)=>{
+    conexion_bd.query('INSERT INTO `t_juegos`(`nombreJuego`, `descJuego`,`tipoJuego`,`costoJuego`,`imgJuego`) VALUES (?,?,?,?,?)',[nombJ,descJ,tipoJ,costoJ,imgJ],(err,results)=>{
         if(err)
         throw err;
-        res.render('catalogo.html');
+        res.redirect('adminView.html');
         // console.log(results);
     })
 }

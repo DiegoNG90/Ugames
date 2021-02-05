@@ -7,7 +7,8 @@ const imagesPath = 'images/';
 function solicitudJuegos(){
     axios.get('http://localhost:8080/games')
     .then((response)=>{
-        mostrarJuegos(response.data)
+        
+        mostrarJuegos(response.data);
 
     })
 
@@ -16,9 +17,9 @@ function solicitudJuegos(){
 solicitudJuegos();
 
 function mostrarJuegos(data){
-    let lista_product = document.querySelector('#lista-productos');
+    let listadojuegos = document.querySelector('#listadojuegos');
 
-    // lista_product
+    // lista_productos
    data.forEach((item)=>{
 
     listadojuegos.innerHTML+=`

@@ -23,7 +23,7 @@ app.get('/', (req,res) => {
 
 app.get('/admin', (req,res) => {
    // res.send(__dirname);
-   res.redirect('agregar-juego.html');
+   res.redirect('adminView.html');
 })
 
 app.listen(port, ()=> console.log("Escuchando en puerto " + port));

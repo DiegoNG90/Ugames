@@ -132,3 +132,20 @@ th{
 /* .botones-plantilla{
 
 } */
+
+.container-fluid{
+    justify-content: center;
+    display: flex;
+}
+
+.card{
+    width: 75%;
+}
+
+li{
+    text-decoration: none;
+}
+#listajuegos{
+    background-color: aliceblue;
+    width: 65%;
+}
