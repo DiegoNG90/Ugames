@@ -728,6 +728,9 @@ div.header{
     margin-bottom: 15%;
     margin-left: 4%; 
       }
+    .imagen {
+        margin-left: 2%;
+    }
 }
 
 
@@ -738,6 +741,9 @@ div.header{
     margin-bottom: 15%;
     margin-left: 6%; 
       }
+    .imagen {
+        margin-left: 4%;
+    }
 }
 
 @media (max-width:950px){
@@ -747,6 +753,9 @@ div.header{
     margin-bottom: 15%;
     margin-left: 6%; 
       }
+    .imagen {
+        margin-left: 4%;
+    }
 }
 
 
@@ -757,6 +766,9 @@ div.header{
         margin-bottom: 15%;
         margin-left: 8%;
       }
+    .imagen {
+        margin-left: 4%;
+    }
 }
 
 @media (max-width:550px){
@@ -766,6 +778,9 @@ div.header{
         margin-bottom: 15%;
         margin-left: 15%;
       }
+    .imagen {
+        margin-left: 8%;
+    }
 }
 
 @media (max-width:320px){
@@ -775,5 +790,7 @@ div.header{
         margin-bottom: 12%;
         margin-left: 15%;
       }
+    .imagen {
+        margin-left: 8%;
+    }
 }
-
