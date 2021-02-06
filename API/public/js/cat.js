@@ -1,4 +1,4 @@
-const serverUrl = 'http://localhost:3000/';
+const serverUrl = 'http://localhost:8080/';
 const itemsPath = 'items/';
 const imagesPath = 'images/';
 
@@ -21,7 +21,7 @@ function mostrarJuegos(data){
 
     // lista_productos
    data.forEach((item)=>{
-
+    console.log(`${serverUrl}${imagesPath}${item.imgJuego}`);
     listadojuegos.innerHTML+=`
     <div class="col-6 col-md-6">
         <div class="item shadow mb-4" data-id=${item.idJuego}>
