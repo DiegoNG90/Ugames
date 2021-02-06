@@ -133,19 +133,50 @@ th{
 
 } */
 
+
+/*JOAQUIN*/
 .container-fluid{
     justify-content: center;
     display: flex;
 }
+.container{
+    margin-top: 3rem;
+}
 
+.table{
+ background-color: ghostwhite;
+}
 .card{
     width: 75%;
 }
 
+thead tr th{
+    border-top: 0;    
+    align-items: center;
+}
+ul{
+    list-style: none;
+}
+
+th{
+    text-align: center;
+    border-radius: 10px;
+    color: black;
+    background-color: ghostwhite;
+}
+td{
+    text-align: center;
+}
 li{
     text-decoration: none;
 }
 #listajuegos{
-    background-color: aliceblue;
     width: 65%;
+}
+#formulario-add{
+    display: flex;
+    flex-direction: column;
+}
+#bttn-enviar{
+    margin-top: 1.5rem;
 }

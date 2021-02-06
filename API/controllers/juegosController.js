@@ -24,7 +24,21 @@ const agregarJuego = (req,res)=>{
 }
 
 
+//Elimina un Juego
+const eliminarJuego= (req,res)=>{
+    //destructuring
+    let idJ = req.params.idJuego;
+    console.log(idJ);
+  /*
+   conexion_bd.query('DELETE FROM `t_juegos` WHERE idJuego = ?',[idJ],(err,results)=>{
+        if(err)
+        throw err;
+    res.send('Juego eliminado');
+    })*/
+}
+
 module.exports = {
     obtenerJuegos,
-    agregarJuego
+    agregarJuego,
+    eliminarJuego
 }

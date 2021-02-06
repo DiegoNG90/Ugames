@@ -79,7 +79,7 @@
                       <input type="text" name="imgJ" id="imgJ" class="form-control" id="exampleInputEmail1">
 
                   
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" id="bttn-enviar">Enviar</button>
                     
                   </form>
           </div>
@@ -87,18 +87,31 @@
       
 
         <div class="container">
-        <ul id="listajuegos">
+          <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID Juego</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Costo</th>
+              <th scope="col">Borrar juego</th>
+            </tr>
+          </thead>
+          <tbody id="listajuegos">
+          </tbody>
+        </table>
+        <ul >
 
         </ul>
       </div>
       
+
       </div>
 
     </div>
     </main>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
-    <script src="./js/eliminar.js"></script>
+    <script src="./js/admin.js"></script>
     <script src="./js/add.js"></script>
 </body>
 </html>

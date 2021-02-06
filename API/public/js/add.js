@@ -3,7 +3,6 @@ let formulario_product = document.querySelector('#formulario-add');
 
 function enviarDatos(e){
     e.preventDefault();
-    alert("ENVIADO");
     let nombJ = document.querySelector('#nombJ').value;
     let descJ = document.querySelector('#descJ').value;
     let tipoJ = document.querySelector('#tipoJ').value;
@@ -12,7 +11,7 @@ function enviarDatos(e){
 
     console.log(nombJ,descJ,tipoJ,costoJ,imgJ)
     
-    axios.post('http://localhost:8080/games/add',{
+    axios.post('http://localhost:8080/games/juegos',{
         nombJ: nombJ,
         descJ: descJ,
         tipoJ: tipoJ,
@@ -20,6 +19,10 @@ function enviarDatos(e){
         imgJ: imgJ
     })
     alert('datos enviados');
+    location.reload();
 }
 
 formulario_product.addEventListener('submit',enviarDatos);
+
+
+
