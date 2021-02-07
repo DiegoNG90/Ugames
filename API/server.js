@@ -37,11 +37,23 @@ passport.use('local.registro', new LocalStrategy({
     passwordField: "password",
     passReqToCallback: true 
 }, (req, username, password, done) => {
-    dbConnection.query()
-    console.log(req.body);
-    console.log(username);
-    console.log(password);
+    // console.log(req.body);
+    // console.log(username);
+    // console.log(password);
+    const newUser = {
+        username,
+        password
+    }
+    dbConnection.query('INSERT INTO users SET ?', newUser,(err, results) => {
+        if(err) throw err;
+        // console.log(results);
+        username.id = results.insertId;
+        return done(null, username.id)
+    }) 
 }));
+
+// passport.serializeUser();
+// passport.deserializeUser();
 
 /* MIDDLEWARES! */
 app.use(cors())
