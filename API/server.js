@@ -52,7 +52,7 @@ app.use(session({
 app.use(express.static(__dirname+'/public/'));
 //Configuramos los middlewares de passport-initialize y passport-session
 app.use(express.json());
-app.use(express.urlencoded({extended: true});
+app.use(express.urlencoded({extended: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 
