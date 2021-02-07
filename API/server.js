@@ -3,6 +3,7 @@ const app = express();
 const port = 8080;
 const path = require('path');
 const hbs = require('hbs');
+const cors = require('cors');
 const session = require('express-session');
 const mysql = require('mysql');
 const MySQLStore = require('express-mysql-session')(session);
@@ -29,18 +30,21 @@ dbConnection.connect((err)=>{
 
 //Creamos la sqlstore 
 const sessionStore = new MySQLStore(options);
-
+//Controller de registro
 passport.use('local.registro', new LocalStrategy({
     //Configuramos el user. Lo que pasemos acá de parámetro irá en el callback, así que deben ser iguales.
     usernameField: "username",
     passwordField: "password",
-    passReqToCallback: true
+    passReqToCallback: true 
 }, (req, username, password, done) => {
-    console.log(req.body );
-
+    dbConnection.query()
+    console.log(req.body);
+    console.log(username);
+    console.log(password);
 }));
 
 /* MIDDLEWARES! */
+app.use(cors())
 //Cookie
 app.use(session({
     secret: "triplete de messi al real",
@@ -56,8 +60,17 @@ app.use(express.urlencoded({extended: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', (req,res) => {
-    res.render("/")
+app.get('/registro', (req,res)=> {
+    res.send("Hubo algun problema en el registro");
 })
+
+//Ruta del formulario de registro
+app.post('/registro', passport.authenticate('local.registro', {
+        successRedirect:"/",
+        failureRedirect: "/registro",
+    })
+    // res.send("Peticion re de registro recibida");
+);
+
 
 app.listen(port, ()=> console.log("Escuchando en puerto " + port));
