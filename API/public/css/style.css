@@ -40,7 +40,6 @@ h5{
 }
 
 /* #p-halo{
-
 } */
 #p-gotham{
     color:darkgoldenrod;
@@ -130,6 +129,594 @@ th{
     background-color: #274a70;
 }
 /* .botones-plantilla{
+} */
+
+/*Logos redes sociales*/
+.redes-sociales{
+    color: #f3f0f0;
+    text-align: center;
+    padding: 1rem;
+}
+
+.logo-redes{
+    color: #f3f0f0;
+    padding: 0.7rem;
+}
+
+/*JULK*/
+
+/*Boton on/off*/
+
+label, label:before, input[type=checkbox]:before, input[type=checkbox]:after {
+	box-sizing: border-box;
+	display: block;
+}
+label {
+	--transDur: 0.2s;
+	--shadowA: 
+		-1.5em 0 1.5em #8d273100,
+		1.5em 0 1.5em #8d273100,
+		0 0 3em #8d273144,
+		0 6.5em 3em #0002;
+	--shadowB:
+		-1.5em 0 1.5em #8d273100,
+		1.5em 0 1.5em #8d273100,
+		0 3.25em 3em #8d273144,
+		0 6.5em 3em #0002;
+	--shadowC:
+		-1.5em 0 1.5em #8d273177,
+		1.5em 0 1.5em #8d273177,
+		0 3.25em 3em #8d273144,
+		0 6.5em 3em #0002;
+	--shadowD:
+		-1.5em 0 1.5em #8d273177,
+		1.5em 0 1.5em #8d273177,
+		0 6.5em 3em #8d273144,
+		0 6.5em 3em #0002;
+	--switchOnA:
+		linear-gradient(90deg,#ecc0,#ecc 0.05em 0.45em,#ecc0) 50% 50% / 0.5em 4em no-repeat,
+		linear-gradient(90deg,#0000,#0002 0.25em 0.75em,#0000) 50% 50% / 1em 4em no-repeat,
+		linear-gradient(#0000,#0003 0.25em 4.25em,#0000) 50% 50% / 0.5em 4.5em no-repeat,
+		radial-gradient(12em 6em at 0 0,#95001100 25%,#95001100 50%),
+		radial-gradient(12em 6em at 100% 0,#95001100 25%,#95001100 50%),
+		radial-gradient(100% 75% at center,#ff002c,#ff002c00 50%) 0 0 / 0.6em 0.6em,
+		radial-gradient(6em 9em at 50% 10%,#ff002c00,#ff002c00 50%),
+		radial-gradient(12em 6em at 0 90%,#ff002c00,#ff002c00 50%),
+		radial-gradient(12em 6em at 100% 90%,#ff002c00,#ff002c00 50%),
+		radial-gradient(9em 9em at 53% 87.5%,#ffc56400 5%,#ff002c00 20%,#ff002c00 50%),
+		linear-gradient(#a90020 87.5%,#d4001d);
+	--switchOnB:
+		linear-gradient(90deg,#ecc0,#ecc 0.05em 0.45em,#ecc0) 50% 50% / 0.5em 4em no-repeat,
+		linear-gradient(90deg,#0000,#0002 0.25em 0.75em,#0000) 50% 50% / 1em 4em no-repeat,
+		linear-gradient(#0000,#0003 0.25em 4.25em,#0000) 50% 50% / 0.5em 4.5em no-repeat,
+		radial-gradient(12em 6em at 0 0,#950011 25%,#95001100 50%),
+		radial-gradient(12em 6em at 100% 0,#950011 25%,#95001100 50%),
+		radial-gradient(100% 75% at center,#ff002c,#ff002c00 50%) 0 0 / 0.6em 0.6em,
+		radial-gradient(6em 9em at 50% 10%,#ff002c,#ff002c00 50%),
+		radial-gradient(12em 6em at 0 90%,#ff002c,#ff002c00 50%),
+		radial-gradient(12em 6em at 100% 90%,#ff002c,#ff002c00 50%),
+		radial-gradient(9em 9em at 53% 87.5%,#ffc564 5%,#ff002c 20%,#ff002c00 50%),
+		linear-gradient(#950011 87.5%,#c10017);
+	--switchOffA:
+		radial-gradient(4em 4em at center,#ecc0 1.45em,#ecc 1.5em 1.95em,#ecc0 2em),
+		radial-gradient(5em 5em at center,#0000 1em,#0002 1.5em 2em,#0000 2.5em),
+		radial-gradient(100% 75% at center,#ff002c 25%,#ff002c00 50%) 0 0 / 0.6em 0.6em,
+		radial-gradient(4em 12em at 50% 100%,#ff002c00,#ff002c00 50%),
+		radial-gradient(12em 6em at 0 10%,#ff002c00,#ff002c00 50%),
+		radial-gradient(12em 6em at 100% 10%,#ff002c00,#ff002c00 50%),
+		radial-gradient(9em 9em at 50% 12.5%,#ffc56400 5%,#ff002c00 20%,#ff002c00 50%),
+		linear-gradient(#c10017,#c10017);
+	--switchOffB:
+		radial-gradient(4em 4em at center,#ecc0 1.45em,#ecc 1.5em 1.95em,#ecc0 2em),
+		radial-gradient(5em 5em at center,#0000 1em,#0002 1.5em 2em,#0000 2.5em),
+		radial-gradient(100% 75% at center,#ff002c 25%,#ff002c00 50%) 0 0 / 0.6em 0.6em,
+		radial-gradient(4em 12em at 50% 100%,#ff002c,#ff002c00 50%),
+		radial-gradient(12em 6em at 0 10%,#ff002c,#ff002c00 50%),
+		radial-gradient(12em 6em at 100% 10%,#ff002c,#ff002c00 50%),
+		radial-gradient(9em 9em at 50% 12.5%,#ffc564 5%,#ff002c 20%,#ff002c00 50%),
+		linear-gradient(#c10017,#c10017);
+	border-radius: 0.5em;
+	box-shadow:
+		0 0.1em 0 #565057,
+		0 0 0 0.1em #2e3138,
+		0 0 0.2em 0.3em #000 inset,
+		0 1em 0.2em 0 #000 inset,
+		0 -1em 0.2em 0 #000 inset,
+		0.5em 0 0.1em #e7454e inset,
+		0.6em 0 0.1em #8d2731 inset,
+		-0.5em 0 0.1em #e7454e inset,
+		-0.6em 0 0.1em #8d2731 inset,
+		0 1.5em 0.2em 0 #800007 inset,
+		0 2em 0.2em 0 #8d2731 inset,
+		0 3em 0.2em 0 #ff8a90 inset,
+		0 4em 0.2em 0 #f8f4f6 inset,
+		0 -1.5em 0.3em 0 #a0001c inset,
+		0 -2em 0.2em 0 #9f0020 inset,
+		0 -3em 0.2em 0 #ae1433 inset,
+		0 -3.5em 0.2em 0 #941028 inset;
+	font-size: calc(12px + 6 * (100vw - 320px) / (1280 - 320));
+	margin: 1.5em;
+	position: relative;
+	width: 13em;
+	height: 17em;
+	-webkit-tap-highlight-color: transparent;
+}
+label:before {
+	background: linear-gradient(#454954,#2a272d);
+	border-radius: 0.25em;
+	box-shadow:
+		0 0 0 0.2em #000 inset,
+		0 0.3em 0 0 #737a8c inset;
+	content: "";
+	margin: auto;
+	position: absolute;
+	top: -1.5em;
+	left: -1.5em;
+	width: 16em;
+	height: 20em;
+	z-index: -1;
+}
+input[type=checkbox], input[type=checkbox]:before, input[type=checkbox]:after {
+	transform-style: preserve-3d;
+}
+input[type=checkbox] {
+	animation: shadowOff var(--transDur) ease-in-out;
+	border: 0;
+	box-shadow: var(--shadowA);
+	cursor: pointer;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 1.5em;
+	left: 0.5em;
+	width: 12em;
+	height: 14em;
+	transform: rotateX(-20deg) translateZ(0.75em);
+	transition: transform var(--transDur) ease-in-out;
+	-webkit-appearance: none;
+	appearance: none;
+}
+input[type=checkbox]:checked {
+	animation: shadowOn var(--transDur) ease-in-out;
+	box-shadow: var(--shadowD);
+	transform: rotateX(20deg) translateZ(0.75em);
+}
+input[type=checkbox]:before, input[type=checkbox]:after {
+	color: #fff;
+	content: "";
+	filter: brightness(0.7);
+	-webkit-filter: brightness(0.7);
+	position: absolute;
+	text-align: center;
+	transition:
+	 	box-shadow var(--transDur) ease-in-out,
+	 	filter var(--transDur) ease-in-out,
+	 	-webkit-filter var(--transDur) ease-in-out;
+	width: 100%;
+	height: 50%;
+}
+input[type=checkbox]:before {
+	animation: switchBeforeOff var(--transDur) steps(1,start);
+	background: var(--switchOnA);
+	box-shadow:
+		0 0.2em 0 0 #fff0 inset,
+		-0.5em -0.5em 0.5em #0000,
+		0.5em -0.5em 0.5em #0000;
+	top: 0;
+	transform: rotateX(-20deg);
+	transform-origin: 50% 100%;
+	z-index: 1;
+}
+input[type=checkbox]:after {
+	animation: switchAfterOff var(--transDur) steps(1,start);
+	background: var(--switchOffA);
+	box-shadow:
+		0 -0.2em 0 0 #fff0 inset,
+		-0.5em 0 0.5em #0007,
+		0.5em 0 0.5em #0007;
+	top: 50%;
+	transform: rotateX(20deg);
+	transform-origin: 50% 0%;
+}
+input[type=checkbox]:checked:before, input[type=checkbox]:checked:after {
+	filter: brightness(1);
+	-webkit-filter: brightness(1);
+}
+input[type=checkbox]:checked:before {
+	animation: switchBeforeOn var(--transDur) steps(1,start) forwards;
+	box-shadow:
+		0 0.2em 0 0 #fff inset,
+		-0.5em -0.5em 0.5em #0007,
+		0.5em -0.5em 0.5em #0007;
+}
+input[type=checkbox]:checked:after {
+	animation: switchAfterOn var(--transDur) steps(1,start) forwards;
+	box-shadow:
+		0 -0.2em 0 0 #fff7 inset,
+		-0.5em 0 0.5em #0000,
+		0.5em 0 0.5em #0000;
+}
+input[type=checkbox]:focus {
+	outline: transparent;
+}
+input[type=checkbox].pristine, input[type=checkbox].pristine:before, input[type=checkbox].pristine:after {
+	animation: none;
+}
+
+/* Animations */
+@keyframes shadowOn {
+	from {
+		box-shadow: var(--shadowA);
+	}
+	50% {
+		box-shadow: var(--shadowB);
+	}
+	51% {
+		box-shadow: var(--shadowC);
+	}
+	to {
+		box-shadow: var(--shadowD);
+	}
+}
+@keyframes shadowOff {
+	from {
+		box-shadow: var(--shadowD);
+	}
+	50% {
+		box-shadow: var(--shadowC);
+	}
+	51% {
+		box-shadow: var(--shadowB);
+	}
+	to {
+		box-shadow: var(--shadowA);
+	}
+}
+@keyframes switchBeforeOn {
+	from, 50% {
+		background: var(--switchOnA);
+	}
+	to {
+		background: var(--switchOnB);
+	}
+}
+@keyframes switchBeforeOff {
+	from, 50% {
+		background: var(--switchOnB);
+	}
+	to {
+		background: var(--switchOnA);
+	}
+}
+@keyframes switchAfterOn {
+	from, 50% {
+		background: var(--switchOffA);
+	}
+	to {
+		background: var(--switchOffB);
+			
+	}
+}
+@keyframes switchAfterOff {
+	from, 50% {
+		background: var(--switchOffB);
+	}
+	to {
+		background: var(--switchOffA);
+			
+	}
+}
+/* Logo landing */
+.imagen{
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+.slide-in-top {
+	animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+    0% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+/* Boton login */
+/*.bounce-top {
+	animation: bounce-top 0.9s both;
+}
+@keyframes bounce-top {
+    0% {
+      transform: translateY(-45px);
+      animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      transform: translateY(-24px);
+      animation-timing-function: ease-in;
+    }
+    65% {
+      transform: translateY(-12px);
+      animation-timing-function: ease-in;
+    }
+    82% {
+      transform: translateY(-6px);
+      animation-timing-function: ease-in;
+    }
+    93% {
+      transform: translateY(-4px);
+      animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      transform: translateY(0px);
+      animation-timing-function: ease-out;
+    }
+    100% {
+      transform: translateY(0px);
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+.boton{
+    background: #050801;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+   
+}
+.boton:hover{
+    background: #03e9f4;
+    
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    
+}
+.boton:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+.boton:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+*/
+
+/* Modal */
+
+.modal-header{
+    background-color: #00d61d;
+}
+
+.modal-body {
+    background-color: #343a40;
+}
+
+.form-group1{
+    color: white;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+div#OR {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
+}
+
+/* Página contraseña */
+h3{
+    text-align: center;
+    color: white !important;
+    font-family: 'Staatliches', cursive;
+    margin-top: 3rem;
+}
+
+div.header{
+   border-bottom: 1px solid #C51111;
+   display: block;
+   margin-top: -15px;
+   margin-bottom: 21px;
+}
+
+#email-label{
+    color: white !important;
+    font-family: 'Staatliches', cursive;
+}
+
+#email-element{
+    text-align: center;
+    
+}
+
+#email{
+    padding: 0 50px;  
+}
+
+#Recuperar-element{
+    text-align: center;
+}
+
+#Recuperar{
+    padding: 5px;
+}
+
+.btn-group-justified1{
+    width: 30%;
+}
+
+/* Boton enviar - contacto */
+  button {
+    margin: 20px;
+  }
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+
+  /* 5 */
+  .btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: rgb(255,27,0);
+  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+  }
+  .btn-5:hover {
+    color: #f0094a;
+    background: transparent;
+     box-shadow:none;
+  }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #f0094a;
+    box-shadow:
+     -1px -1px 5px 0px #fff,
+     7px 7px 20px 0px #0003,
+     4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
 
 } */
 
@@ -727,6 +1314,7 @@ div.header{
     transition:800ms ease all;
   }
 
+
 /*MEDIA QUERIES*/
 
 @media (max-width:1440px){
@@ -848,5 +1436,4 @@ li{
 }
 #bttn-enviar{
     margin-top: 1.5rem;
-}
 
