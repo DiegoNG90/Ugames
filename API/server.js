@@ -6,6 +6,11 @@ const hbs = require('hbs');
 const session = require('express-session');
 const mysql = require('mysql');
 const MySQLStore = require('express-mysql-session')(session);
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const { urlencoded } = require('express');
+ 
+
 //Configuracion de la BDD bd_games
 const options = {
     host: "localhost",
@@ -24,6 +29,18 @@ dbConnection.connect((err)=>{
 
 //Creamos la sqlstore 
 const sessionStore = new MySQLStore(options);
+
+passport.use('local.registro', new LocalStrategy({
+    //Configuramos el user. Lo que pasemos acá de parámetro irá en el callback, así que deben ser iguales.
+    usernameField: "username",
+    passwordField: "password",
+    passReqToCallback: true
+}, (req, username, password, done) => {
+    console.log(req.body );
+
+}));
+
+/* MIDDLEWARES! */
 //Cookie
 app.use(session({
     secret: "triplete de messi al real",
@@ -31,8 +48,13 @@ app.use(session({
     saveUninitialized: true,
     store: sessionStore
 }))
-
+//Public con html
 app.use(express.static(__dirname+'/public/'));
+//Configuramos los middlewares de passport-initialize y passport-session
+app.use(express.json());
+app.use(express.urlencoded({extended: true});
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', (req,res) => {
     res.render("/")
