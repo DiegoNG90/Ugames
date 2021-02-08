@@ -149,7 +149,7 @@ th{
 
 /*Boton on/off*/
 
-.botonOnOff, botonOnOff:before, input[type=checkbox]:before, input[type=checkbox]:after {
+.botonOnOff, input[type=checkbox]:before, input[type=checkbox]:after {
 	box-sizing: border-box;
 	display: block;
 }
