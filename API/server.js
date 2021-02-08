@@ -12,11 +12,11 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const { urlencoded } = require('express');
  
-
-
-
 //Creamos la sqlstore 
 const sessionStore = new MySQLStore(options);
+
+//
+
 //Controller de registro
 passport.use('local.registro', new LocalStrategy({
     //Configuramos el user. Lo que pasemos acá de parámetro irá en el callback, así que deben ser iguales.
@@ -33,14 +33,22 @@ passport.use('local.registro', new LocalStrategy({
     }
     dbConnection.query('INSERT INTO users SET ?', newUser,(err, results) => {
         if(err) throw err;
-        console.log(results);
+        // console.log(results);
         username.id = results.insertId;
         return done(null, username.id)
     }) 
 }));
 
-// passport.serializeUser();
-// passport.deserializeUser();
+//serializacion del user
+passport.serializeUser((user, done)=> {
+    done(null, user.id)
+});
+//deserializacion del user
+passport.deserializeUser((id,done)=>{
+    dbConnection.query('SELECT * FROM users WHERE id=?',[id], (err,results)=>{
+        done(err,results[0])
+    })
+});
 
 /* MIDDLEWARES! */
 app.use(cors())
@@ -68,7 +76,6 @@ app.post('/registro', passport.authenticate('local.registro', {
         successRedirect:"/",
         failureRedirect: "/registro",
     })
-    // res.send("Peticion de registro recibida");
 );
 
 
