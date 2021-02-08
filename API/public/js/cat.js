@@ -23,14 +23,16 @@ function mostrarJuegos(data){
    data.forEach((item)=>{
     console.log(`${serverUrl}${imagesPath}${item.imgJuego}`);
     listadojuegos.innerHTML+=`
-    <div class="col-6 col-md-6">
+    <div class="col-6 col-md-6 juegoconteiner">
         <div class="item shadow mb-4" data-id=${item.idJuego}>
             <h3 class="item-title">${item.nombreJuego}</h3>
+            <div class="imgdesc">
             <img class="item-image" src=${serverUrl}${imagesPath}${item.imgJuego}>
-
+            <p>${item.descJuego}</p>
+            </div>
             <div class="item-details">
-                <h4 class="item-price">${item.costoJuego}$</h4>
-                <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                <h4 class="item-price"><u>Precio</u>:&nbsp; &nbsp;${item.costoJuego}  $</h4>
+                <button class="item-button btn btn-success addToCart">AÑADIR AL CARRITO</button>
             </div>
         </div>
     </div>`

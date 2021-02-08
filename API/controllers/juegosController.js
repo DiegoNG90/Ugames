@@ -23,12 +23,26 @@ const agregarJuego = (req,res)=>{
     })
 }
 
+//Edita costo de un Juego
+const editarJuego =(req,res)=>{
+
+    //destructuring
+    let idJ = req.params;
+
+    //console.log(idJ.precio);
+    //console.log(idJ.idjuego);
+    conexion_bd.query('UPDATE `t_juegos` SET `costoJuego`= ? WHERE idJuego = ?',[idJ.precio,idJ.idjuego],(err,results)=>{
+        if(err)
+        throw err;
+    res.send('Juego editado con exito!');
+    })
+}
 
 //Elimina un Juego
 const eliminarJuego= (req,res)=>{
     //destructuring
     let idJ = req.params;
-    console.log(idJ.idjuego);
+    //console.log(idJ.idjuego);
   
    conexion_bd.query('DELETE FROM `t_juegos` WHERE idJuego = ?',[idJ.idjuego],(err,results)=>{
         if(err)
@@ -40,5 +54,6 @@ const eliminarJuego= (req,res)=>{
 module.exports = {
     obtenerJuegos,
     agregarJuego,
-    eliminarJuego
+    eliminarJuego,
+    editarJuego
 }

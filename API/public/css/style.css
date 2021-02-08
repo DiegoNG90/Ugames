@@ -850,3 +850,57 @@ li{
 #bttn-enviar{
     margin-top: 1.5rem;
 }
+
+
+/*Catalogo*/
+
+#listadojuegos{
+    margin-top: 1rem;
+}
+
+.juegoconteiner{
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    border: 2px solid rgb(0, 145, 36);
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #21252b;
+}
+
+.item-title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.item-image {
+    height: 18rem;
+    margin-left: 3rem;
+    box-shadow: 0 11px 8px -6px rgba(0, 134, 11, 0.392);
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px 15px;
+}
+.item-details .item-price {
+    margin-left: 2rem;
+}
+  
+.imgdesc{
+      display: flex;
+}
+.imgdesc p{
+      color: white;
+      margin: 0 1rem;
+      text-align:justify;  
+}
+
+.item-details h4{
+        color: white;
+        margin: 0 1rem;
+        text-align:justify;  
+}
