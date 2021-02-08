@@ -30,7 +30,7 @@ passport.use('local.login', new LocalStrategy({
                 return done(null,false, {message: "Usuario o contraseña incorrecta"});
             }
         }else{
-            done(null, false, {message: "Usuario no existe"});
+            done(null, false, {message: "Usuario o contraseña no existe"});
         }
     })
 }))
@@ -38,8 +38,8 @@ passport.use('local.login', new LocalStrategy({
 //Controller de registro
 passport.use('local.registro', new LocalStrategy({
     //Configuramos el user. Lo que pasemos acá de parámetro irá en el callback, así que deben ser iguales.
-    usernameField: "username",
-    passwordField: "password",
+    usernameField: 'username',
+    passwordField: 'password',
     passReqToCallback: true 
 }, (req, username, password, done) => {
     // console.log(req.body);
@@ -51,7 +51,7 @@ passport.use('local.registro', new LocalStrategy({
     }
     dbConnection.query('INSERT INTO users SET ?', newUser,(err, results) => {
         if(err) throw err;
-        // console.log(results);
+        console.log(results);
         username.id = results.insertId;
         return done(null, username.id)
     }) 
@@ -95,17 +95,23 @@ app.post('/registro', passport.authenticate('local.registro', {
         failureRedirect: "/registro",
     })
 );
-//Ruta de login
+//Ruta del form de login
 app.post('/login', (req,res,next)=>{
     passport.authenticate('local.login', (err,user,info)=>{
         if(err) {return next(err)};
-        if(!user){return res.send(info)} //o Redireccionar res.redirect(/index)
+        if(!user){ return res.send(info)} //o Redireccionar res.redirect(/index)
         req.logIn(user, (err)=>{
             if(err){return next(err)};
-            return res.send("Te has logueado");//res.redirect('/index.html')
+            // res.send("Te has logueado");
+            return res.redirect('landing.html')
         })
 
     }) (req,res,next)
+})
+//Ruta del logout
+app.get('/logout', (req,res)=>{
+    req.logOut();
+    res.redirect('index.html')
 })
 // dbConnection.query('SELECT * from users', (err, results)=>{
 //     if(err)throw err;
