@@ -15,7 +15,25 @@ const { urlencoded } = require('express');
 //Creamos la sqlstore 
 const sessionStore = new MySQLStore(options);
 
-//
+//Controlador de login
+passport.use('local.login', new LocalStrategy({
+    usernameField:'username',
+    passwordField:'password',
+    passReqToCallback: true
+}, (req,username,password,done)=>{
+    dbConnection.query('SELECT * from users WHERE username=?', [username], (err,results)=> {
+        if(err)throw err;
+        if(results.length > 0){
+            if(results[0].password === password){
+                return done(null, results[0]);
+            }else{
+                return done(null,false, {message: "Usuario o contraseña incorrecta"});
+            }
+        }else{
+            done(null, false, {message: "Usuario no existe"});
+        }
+    })
+}))
 
 //Controller de registro
 passport.use('local.registro', new LocalStrategy({
@@ -77,6 +95,22 @@ app.post('/registro', passport.authenticate('local.registro', {
         failureRedirect: "/registro",
     })
 );
+//Ruta de login
+app.post('/login', (req,res,next)=>{
+    passport.authenticate('local.login', (err,user,info)=>{
+        if(err) {return next(err)};
+        if(!user){return res.send(info)} //o Redireccionar res.redirect(/index)
+        req.logIn(user, (err)=>{
+            if(err){return next(err)};
+            return res.send("Te has logueado");//res.redirect('/index.html')
+        })
+
+    }) (req,res,next)
+})
+// dbConnection.query('SELECT * from users', (err, results)=>{
+//     if(err)throw err;
+//     console.log(results);
+// })
 
 
 app.listen(port, ()=> console.log("Escuchando en puerto " + port));
