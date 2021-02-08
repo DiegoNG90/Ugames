@@ -3,6 +3,7 @@ const app = express();
 const port = 8080;
 const path = require('path');
 const hbs = require('hbs');
+const {options, dbConnection} = require('./config/dbConfig') 
 const cors = require('cors');
 const session = require('express-session');
 const mysql = require('mysql');
@@ -12,21 +13,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const { urlencoded } = require('express');
  
 
-//Configuracion de la BDD bd_games
-const options = {
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password:"",
-    database: "bd_ugames"
-}
-//generamos la conexion a msql con la configuracion de options
-const dbConnection = mysql.createConnection(options);
-//Ejecutamos la conexion a la BDD bd_games
-dbConnection.connect((err)=>{
-    if(err) throw err;
-    console.log("Conexion exitosa a la BDD");
-})
+
 
 //Creamos la sqlstore 
 const sessionStore = new MySQLStore(options);
@@ -46,7 +33,7 @@ passport.use('local.registro', new LocalStrategy({
     }
     dbConnection.query('INSERT INTO users SET ?', newUser,(err, results) => {
         if(err) throw err;
-        // console.log(results);
+        console.log(results);
         username.id = results.insertId;
         return done(null, username.id)
     }) 
@@ -81,7 +68,7 @@ app.post('/registro', passport.authenticate('local.registro', {
         successRedirect:"/",
         failureRedirect: "/registro",
     })
-    // res.send("Peticion re de registro recibida");
+    // res.send("Peticion de registro recibida");
 );
 
 
