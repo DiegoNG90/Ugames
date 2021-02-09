@@ -1,4 +1,4 @@
-const conexion_bd=require('../config/bdConfig')
+const {conexion_bd} =require('../config/bdConfig')
 
 
 
