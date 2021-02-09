@@ -84,10 +84,21 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+const isLogedIn = (req,res,next) => {
+    if(req.isAuthenticated()){
+        return next();
+    }else{
+        res.redirect('/');
+    }
+}
 
 app.get('/registro', (req,res)=> {
     res.send("Hubo algun problema en el registro");
 })
+// //Ruta /
+// app.get('/', (req,res)=> {
+//     res.redirect('index.html');
+// })
 
 //Ruta del formulario de registro
 app.post('/registro', passport.authenticate('local.registro', {
@@ -109,10 +120,11 @@ app.post('/login', (req,res,next)=>{
     }) (req,res,next)
 })
 //Ruta del logout
-app.get('/logout', (req,res)=>{
+app.get('/logout', isLogedIn, (req,res)=>{
     req.logOut();
     res.redirect('index.html')
 })
+
 // dbConnection.query('SELECT * from users', (err, results)=>{
 //     if(err)throw err;
 //     console.log(results);
