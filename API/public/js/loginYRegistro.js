@@ -25,10 +25,12 @@ function logIn(e){
         password: password
     })
     .then((response)=>{
-        console.log(response.)
-        if(response.status===200){
+        console.log(response)
+        if(response.data === "Te has logueado"){
+            console.log(response.data);
             console.log("Respuesta 200, el back te redirigió a landing.html")
-            // window.location = 'landing.html';
+            window.location = 'landing.html';
+
         }
     })
     .catch((error)=>{

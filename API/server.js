@@ -49,6 +49,9 @@ passport.use('local.registro', new LocalStrategy({
         username,
         password
     }
+    dbConnection.query('SELECT * from users WHERE username = ?',newUser.username,(err,results)=>{
+
+    })
     dbConnection.query('INSERT INTO users SET ?', newUser,(err, results) => {
         if(err) throw err;
         console.log(results);
@@ -84,26 +87,27 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(passport.initialize());
 app.use(passport.session());
-const isLogedIn = (req,res,next) => {
+
+function isLogedIn(req,res,next){
     if(req.isAuthenticated()){
         return next();
     }else{
-        res.redirect('/');
+        res.redirect('index.html');
+    }
+}
+function isNotLogedIn(req,res,next){
+    if(req.isAuthenticated()){
+        return res.redirect('/')
+    }else{
+        next();
     }
 }
 
-app.get('/registro', (req,res)=> {
-    res.send("Hubo algun problema en el registro");
-})
-// //Ruta /
-// app.get('/', (req,res)=> {
-//     res.redirect('index.html');
-// })
 
 //Ruta del formulario de registro
-app.post('/registro', passport.authenticate('local.registro', {
-        successRedirect:"/",
-        failureRedirect: "/registro",
+app.post('/registro',isLogedIn, passport.authenticate('local.registro', {
+        successRedirect:"/registro",
+        failureRedirect: "/",
     })
 );
 //Ruta del form de login
@@ -113,17 +117,29 @@ app.post('/login', (req,res,next)=>{
         if(!user){ return res.send(info)} //o Redireccionar res.redirect(/index)
         req.logIn(user, (err)=>{
             if(err){return next(err)};
-            // res.send("Te has logueado");
-            return res.redirect('landing.html')
+            return res.send("Te has logueado");
+            
         })
 
     }) (req,res,next)
+})
+//Rutas 
+app.get('/login', (req,res)=> {
+    res.redirect('index.html');
+})
+
+
+app.get('/registro', (req,res)=> {
+    res.send("Hubo algun problema en el registro");
 })
 //Ruta del logout
 app.get('/logout', isLogedIn, (req,res)=>{
     req.logOut();
     res.redirect('index.html')
 })
+// app.get('/landing', isLogedIn, (req,res)=>{
+//     res.redirect('landing.html');
+// })
 
 // dbConnection.query('SELECT * from users', (err, results)=>{
 //     if(err)throw err;
