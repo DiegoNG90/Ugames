@@ -18,7 +18,7 @@ const { urlencoded } = require('express'); //No sé si es necesario tampoco.
 //Creamos la sqlstore 
 const sessionStore = new MySQLStore(options);
 
-//Controlador de login
+//Controlador y estrategia de login
 passport.use('local.login', new LocalStrategy({
     usernameField:'username',
     passwordField:'password',
@@ -38,7 +38,7 @@ passport.use('local.login', new LocalStrategy({
     })
 }))
 
-//Controller de registro
+//Controller y estrategia de registro 
 passport.use('local.registro', new LocalStrategy({
     //Configuramos el user. Lo que pasemos acá de parámetro irá en el callback, así que deben ser iguales.
     usernameField: 'username',
@@ -52,9 +52,9 @@ passport.use('local.registro', new LocalStrategy({
         username,
         password
     }
-    conexion_bd.query('SELECT * from users WHERE username = ?',newUser.username,(err,results)=>{
+    // conexion_bd.query('SELECT * from users WHERE username = ?',newUser.username,(err,results)=>{
 
-    })
+    // })
     conexion_bd.query('INSERT INTO users SET ?', newUser,(err, results) => {
         if(err) throw err;
         console.log(results);
@@ -118,9 +118,16 @@ app.get('/admin', (req,res) => {
    // res.send(__dirname);
    res.redirect('adminView.html');
 })
+app.get('/login', (req,res)=> {
+    res.redirect('index.html');
+})
+
+app.get('/registro', (req,res)=> {
+    res.send("Hubo algun problema en el registro");
+})
 
 //Ruta del formulario de registro
-app.post('/registro',isLogedIn, passport.authenticate('local.registro', {
+app.post('/registro', passport.authenticate('local.registro', {
     successRedirect:"/registro",
     failureRedirect: "/",
     })
