@@ -132,6 +132,27 @@ th{
 /* .botones-plantilla{
 
 } */
+/* Loading */
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #343a40;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	transition: 9s all;
+	opacity: 0;
+}
+.loading.show {
+	opacity: 1;
+}
+
+
+
 
 /*Logos redes sociales*/
 /* Let's style the wrapper in such away that, 
