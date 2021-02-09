@@ -138,10 +138,10 @@ th{
 it should always be at the center of the browser */
 .wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 50%;
   transform: translate(-50%, -50%);
-  width: 550px;
 }
 
 /* Style the Un-order list by setting its list-style to none */
