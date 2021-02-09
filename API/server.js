@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8080;
-const path = require('path');
+const path = require('path'); // No se si se usa :'(
 const hbs = require('hbs'); // No se usa; ver branch hbs
 const cors = require('cors');
 const juegosRouter = require('./routes/games');
