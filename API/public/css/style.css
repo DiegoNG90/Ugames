@@ -95,7 +95,7 @@ th{
     width: 15rem;
     height: 1.7rem;
 }
-#filtro-genero, a{
+#filtro-genero>a{
     padding-left: 2rem;
     /* height: 2rem; */
 }
