@@ -32,9 +32,11 @@ app.use(passport.session());
 //Manuales: para proteccion de rutas 
 function isLogedIn(req,res,next){
     if(req.isAuthenticated()){
+        console.log("El usuario está debidamente logueado y por ende, puede acceder a index/landing");
         return next();
     }else{
-        res.redirect('index.html');
+        console.log("El user está intenando acceder al index/landing sin permisos y por eso lo vamos a redirigir");
+        res.redirect('loginRegistro.html');
     }
 }
 function isNotLogedIn(req,res,next){
@@ -50,16 +52,38 @@ app.use('/games',juegosRouter);
 app.use('/images', imgRoutes);
 
 //Rutas
-app.get('/landing.html', isLogedIn ,(req,res) => {
+app.get('/', isLogedIn,(req,res) => {
     res.redirect("landing.html")
+})
+app.get('/landing', isLogedIn,(req,res) => {
+    res.redirect("landing.html")
+})
+app.get('/contacto',isLogedIn, (req,res)=> {
+    res.redirect("contacto.html");
+})
+app.get('/catalogo', isLogedIn,(req,res)=> {
+    res.redirect("catalogo.html")
+})
+//No funciona
+app.get('/landing.html', isNotLogedIn,(req,res) => {
+    res.redirect("landing.html")
+})
+//No funciona
+app.get('/contacto.html',isLogedIn, (req,res)=> {
+    res.redirect("contacto.html");
+})
+//No funciona
+app.get('/catalogo.html',isLogedIn, (req,res)=> {
+    res.redirect("contacto.html");
+})
+
+app.get('/login', isNotLogedIn, (req,res)=> {
+    res.redirect('login.html');
 })
 
 app.get('/admin', (req,res) => {
    // res.send(__dirname);
    res.redirect('adminView.html');
-})
-app.get('/login', (req,res)=> {
-    res.redirect('index.html');
 })
 
 app.get('/registro', (req,res)=> {
@@ -86,9 +110,9 @@ app.post('/login', (req,res,next)=>{
     }) (req,res,next)
 })
 //Ruta del logout
-app.get('/logout', isLogedIn, (req,res)=>{
-    req.logOut();
-    res.redirect('index.html')
+app.get('/logout', (req,res)=>{
+    req.logout();
+    res.redirect('loginRegistro.html')
 })
 
 app.listen(port, ()=> console.log("Escuchando en puerto " + port));
