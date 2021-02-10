@@ -23,7 +23,7 @@ app.use(session({
     saveUninitialized: true,
     store: sessionStore
 }))
-app.use(express.static(__dirname+'/public'));
+// app.use(express.static(__dirname+'/public'));
 app.use(express.json()); // permite que mi app acepte json del lado del cliente
 app.use(express.urlencoded({extended:true})); // permite interprete los datos que vienen del cliente
 //Middlewares de passport
@@ -36,7 +36,7 @@ function isLogedIn(req,res,next){
         return next();
     }else{
         console.log("El user está intenando acceder al index/landing sin permisos y por eso lo vamos a redirigir");
-        res.redirect('loginRegistro.html');
+        res.render('/login');
     }
 }
 function isNotLogedIn(req,res,next){
@@ -58,8 +58,8 @@ app.get('/', isLogedIn,(req,res) => {
 app.get('/landing', isLogedIn,(req,res) => {
     res.redirect("landing.html")
 })
-app.get('/contacto',isLogedIn, (req,res)=> {
-    res.redirect("contacto.html");
+app.get('/public/contacto',isLogedIn, (req,res)=> {
+    res.status(200).send();
 })
 app.get('/catalogo', isLogedIn,(req,res)=> {
     res.redirect("catalogo.html")
@@ -70,7 +70,7 @@ app.get('/landing.html', isNotLogedIn,(req,res) => {
 })
 //No funciona
 app.get('/contacto.html',isLogedIn, (req,res)=> {
-    res.redirect("contacto.html");
+    // res.redirect("contacto.html");
 })
 //No funciona
 app.get('/catalogo.html',isLogedIn, (req,res)=> {
@@ -78,12 +78,13 @@ app.get('/catalogo.html',isLogedIn, (req,res)=> {
 })
 
 app.get('/login', isNotLogedIn, (req,res)=> {
-    res.redirect('login.html');
+    res.status(200).send("login");
+    // res.redirect('/login');
 })
 
 app.get('/admin', (req,res) => {
    // res.send(__dirname);
-   res.redirect('adminView.html');
+   // res.redirect('adminView.html');
 })
 
 app.get('/registro', (req,res)=> {
@@ -92,8 +93,8 @@ app.get('/registro', (req,res)=> {
 
 //Ruta del formulario de registro
 app.post('/registro', passport.authenticate('local.registro', {
-    successRedirect:"/registro",
-    failureRedirect: "/",
+    successRedirect:"/",
+    failureRedirect: "/login",
     })
 );
 //Ruta del form de login
@@ -112,7 +113,7 @@ app.post('/login', (req,res,next)=>{
 //Ruta del logout
 app.get('/logout', (req,res)=>{
     req.logout();
-    res.redirect('loginRegistro.html')
+    res.redirect('/login')
 })
 
 app.listen(port, ()=> console.log("Escuchando en puerto " + port));

@@ -2,6 +2,7 @@ function registrarse(e){
     e.preventDefault();
     let username = document.querySelector('#userReg').value;
     let password = document.querySelector('#passwordReg').value;
+    //Faltarían validaciones desde el Front
     axios.post('http://localhost:8080/registro',{
         username: username,
         password: password,
@@ -39,3 +40,4 @@ function logIn(e){
     // window.location = 'contenido.html'
 }
 document.querySelector('#login-btn').addEventListener('click',logIn);
+

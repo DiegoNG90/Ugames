@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugames</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon/umbraco-brands.png" type="image/x-icon">
+    <!-- Redes sociales -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <section>
+        <header>
+            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <a class="navbar-brand" href="landing.html">
+                    <img id="ugames-logo" src="./images/ugams_logov2.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <form class="form-inline d-flex justify-content-center">
+                    <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="catalogo.html">Catalogo <i class="fas fa-gamepad"></i><span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="biblioteca.html">Biblioteca <i class="fas fa-swatchbook"></i></a>
+                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Carrito <i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/public/contacto">Contacto <i class="fas fa-feather-alt"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <a href="http://localhost:8080/logout"><i class="fas fa-power-off"></i></a>
+              </nav>
+              </div>
+        </header>
+    </section>
+
+
+    <section class="d-flex justify-content-center formulario-contacto">
+
+        <div class="align-middle jumbotron jumbotron-contacto">
+          <h1 class="display-4 titulo-contacto">Escribamonos</h1>
+          <p class="lead parrafo-contacto"> Hola, somos Joaquín, Julián y Diego y Ugames se trata de un proyecto colaborativo donde construimos una plataforma de ecommerce para juegos de PC. Si estás acá, queremos agradecerte por tomarte el tiempo de recorrer la web. Cualquier sugerencia, pregunta o comentario respecto a la web será bien recibida.</p>
+        
+          <form action="https://formspree.io/f/mbjpbveq" method="POST">
+            <div class="form-group">
+              <label class="labels-form" for="nombre" >Nombre</label>
+                <input class="form-control" type="text" name="Nombre" placeholder="Escribi tu nombre">
+            </div>
+            <div class="form-group">
+              <label class="labels-form" for="apellido">Apellido</label>
+                <input class="form-control" type="text" name="Apellido" placeholder="Escribi tu apellido">
+            </div>
+            <div class="form-group">
+              <label class="labels-form" for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="Email" placeholder="nombre@servidor.com">
+            </div>
+            <div class="form-group">
+              <label class="labels-form" for="comentario">Escribe tu comentario</label>
+              <textarea class="form-control" id="comentario" name="comentario" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg boton-form custom-btn btn-5" href="#" role="button"><span>Enviar</span></button>
+          </form>
+        </div>
+      </section>
+
+     <div class="wrapper d-flex justify-content-center">
+      <ul>
+        <li class="facebook"><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+        <li class="twitter"><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+        <li class="instagram"><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+        <li class="google"><a href="#"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+        <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+     
+
+    <!-- Jquery, Pooper and Bootstrap.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/filtro.js"></script>
+  </body>
+</html>
