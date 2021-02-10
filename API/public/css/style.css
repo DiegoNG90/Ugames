@@ -536,6 +536,10 @@ a span:nth-child(4){
     margin-bottom: 15px;
 }
 
+.btn-danger{
+    margin-left: -15px;
+}
+
 div#OR {
     height: 30px;
     width: 30px;
