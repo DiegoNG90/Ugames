@@ -98,18 +98,28 @@ function adminLogIn(e){
     let username = document.querySelector('#userAdm').value;
     let password = document.querySelector('#contraseñaAdm').value;
     let cantidadRepeticiones = 0;
+    let statusPass = false;
     let dataArr = admins;
 
     dataArr.forEach(element => {
         if(element.username === username){
             cantidadRepeticiones++;
+            if(element.password === password){
+                statusPass = true;
+
+            }
         }
     })
     if (cantidadRepeticiones === 0) {
         let $errorLogin = document.querySelector('#msg-error-admin');
         $errorLogin.style.color = "red";
         $errorLogin.textContent = "El administrador ingresado no existe. Por favor, vaya a la pestaña de REGISTRO para registrarse como usuario comun."
-    } else {
+    } else if(statusPass === false){
+        let $errorLogin = document.querySelector('#msg-error-admin');
+        $errorLogin.style.color = "red";
+        $errorLogin.textContent = "La contraseña es incorrecta"
+    } 
+    else {
         axios.post('http://localhost:8080/admin',{
             username: username,
             password: password
