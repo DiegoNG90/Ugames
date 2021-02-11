@@ -64,19 +64,6 @@ app.get('/public/contacto',isLogedIn, (req,res)=> {
 app.get('/catalogo', isLogedIn,(req,res)=> {
     res.redirect("catalogo.html")
 })
-//No funciona
-app.get('/landing.html', isNotLogedIn,(req,res) => {
-    res.redirect("landing.html")
-})
-//No funciona
-app.get('/contacto.html',isLogedIn, (req,res)=> {
-    // res.redirect("contacto.html");
-})
-//No funciona
-app.get('/catalogo.html',isLogedIn, (req,res)=> {
-    res.redirect("contacto.html");
-})
-
 app.get('/login', isNotLogedIn, (req,res)=> {
     res.status(200).send("login");
     // res.redirect('/login');
