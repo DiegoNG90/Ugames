@@ -53,13 +53,13 @@ app.use('/images', imgRoutes);
 
 //Rutas
 app.get('/', isLogedIn,(req,res) => {
-    res.redirect("landing.html")
+    res.send(200).send("registro y login")
 })
 app.get('/landing', isLogedIn,(req,res) => {
-    res.redirect("landing.html")
+    res.status(200).send("landing")
 })
-app.get('/public/contacto',isLogedIn, (req,res)=> {
-    res.status(200).send();
+app.get('/contacto',isLogedIn, (req,res)=> {
+    res.status(200).send("contacto");
 })
 app.get('/catalogo', isLogedIn,(req,res)=> {
     res.redirect("catalogo.html")
