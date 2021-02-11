@@ -54,6 +54,7 @@ function logIn(e){
     e.preventDefault();
     let username = document.querySelector('#user').value;
     let password = document.querySelector('#contraseña').value;
+    //Falta validacion del username, si existe.
     axios.post('http://localhost:8080/login',{
         username: username,
         password: password
