@@ -38,11 +38,6 @@ function registrarse(e){
         let $errorMsg = document.querySelector('#msg-error-registro');
         $errorMsg.style.color = "red";
         $errorMsg.innerHTML = "El usuario ya existe, por favor, ingrese otro username."
-        // if($errorMsg.innerText.length > 0){
-        //     $
-        // }else{
-
-        // }
     }
 
 
@@ -84,7 +79,57 @@ function logIn(e){
         })
         
     }
-    // window.location = 'contenido.html'
 }
 document.querySelector('#login-btn').addEventListener('click',logIn);
+
+//ADMINS
+
+let admins;
+async function solicitudAdmins(){
+    admins = await axios.get('http://localhost:8080/admins')
+    .then(response => response.data)
+    .catch((err)=> console.log(err))
+}
+
+solicitudAdmins();
+
+function adminLogIn(e){
+    e.preventDefault();
+    let username = document.querySelector('#userAdm').value;
+    let password = document.querySelector('#contraseñaAdm').value;
+    let cantidadRepeticiones = 0;
+    let dataArr = admins;
+
+    dataArr.forEach(element => {
+        if(element.username === username){
+            cantidadRepeticiones++;
+        }
+    })
+    if (cantidadRepeticiones === 0) {
+        let $errorLogin = document.querySelector('#msg-error-admin');
+        $errorLogin.style.color = "red";
+        $errorLogin.textContent = "El administrador ingresado no existe. Por favor, vaya a la pestaña de REGISTRO para registrarse como usuario comun."
+    } else {
+        axios.post('http://localhost:8080/admin',{
+            username: username,
+            password: password
+        })
+        .then((response)=>{
+            console.log(response)
+            if(response.status === 200){
+                console.log(response.data);
+                console.log("Respuesta 200, el back te redirigió a landing.html")
+                window.location = 'adminView.html';
+    
+            }
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+        
+    }
+}
+
+document.querySelector('#admin-btn').addEventListener('click',adminLogIn);
+
 

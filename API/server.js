@@ -73,12 +73,11 @@ app.get('/login', isNotLogedIn, (req,res)=> {
     res.status(200).send("enviando a login");
     // res.redirect('/login');
 })
-
-app.get('/admin', (req,res) => {
-   // res.send(__dirname);
-   // res.redirect('adminView.html');
-   
+app.get('/admin', isNotLogedIn, (req,res)=> {
+    res.status(200).send("enviando a admin");
 })
+
+
 
 app.get('/registro', (req,res)=> {
     res.send("Hubo algun problema en el registro");
@@ -99,6 +98,18 @@ app.get('/descargar',function(req,res){
 //Ruta del form de login
 app.post('/login', (req,res,next)=>{
     passport.authenticate('local.login', (err,user,info)=>{
+        if(err) {return next(err)};
+        if(!user){ return res.send(info)} //o Redireccionar res.redirect(/index)
+        req.logIn(user, (err)=>{
+            if(err){return next(err)};
+            return res.send("Te has logueado");
+            
+        })
+
+    }) (req,res,next)
+})
+app.post('/admin', (req,res,next)=>{
+    passport.authenticate('local.admin', (err,user,info)=>{
         if(err) {return next(err)};
         if(!user){ return res.send(info)} //o Redireccionar res.redirect(/index)
         req.logIn(user, (err)=>{

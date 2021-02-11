@@ -52,6 +52,25 @@ passport.use('local.registro', new LocalStrategy({
         return done(null, username.id)
     }) 
 }));
+//Admin strategy
+passport.use('local.admin', new LocalStrategy({
+    usernameField:'username',
+    passwordField:'password',
+    passReqToCallback: true
+}, (req,username,password,done)=>{
+    conexion_bd.query('SELECT * from admins WHERE username=?', [username], (err,results)=> {
+        if(err)throw err;
+        if(results.length > 0){
+            if(results[0].password === password){
+                return done(null, results[0]);
+            }else{
+                return done(null,false, {message: "Usuario o contraseña incorrecta"});
+            }
+        }else{
+            done(null, false, {message: "Usuario o contraseña no existe"});
+        }
+    })
+}))
 
 //serializacion del user
 passport.serializeUser((user, done)=> {
@@ -63,6 +82,17 @@ passport.deserializeUser((id,done)=>{
         done(err,results[0])
     })
 });
+//Serializacion admin
+passport.serializeUser((admin, done)=> {
+    done(null, admin.id)
+});
+//deserializacion del user
+passport.deserializeUser((id,done)=>{
+    conexion_bd.query('SELECT * FROM admins WHERE id=?',[id], (err,results)=>{
+        done(err,results[0])
+    })
+});
+
 
 module.exports = {
     passport,
