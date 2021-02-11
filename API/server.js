@@ -56,25 +56,26 @@ app.use('/users', userRouter);
 
 //Rutas
 app.get('/', isLogedIn,(req,res) => {
-    res.send(200).send("registro y login")
+    res.send(200).send("enviando a registro y login")
 })
-app.get('/landing', isLogedIn,(req,res) => {
-    res.status(200).send("landing")
+app.get('/public/landing', isLogedIn,(req,res) => {
+    res.status(200).send("enviando a landing")
 })
 app.get('/contacto',isLogedIn, (req,res)=> {
-    res.status(200).send("contacto");
+    res.status(200).send("enviando a contacto");
 })
 app.get('/catalogo', isLogedIn,(req,res)=> {
-    res.redirect("catalogo.html")
+    res.status(200).send("enviando a catalogo")
 })
 app.get('/login', isNotLogedIn, (req,res)=> {
-    res.status(200).send("login");
+    res.status(200).send("enviando a login");
     // res.redirect('/login');
 })
 
 app.get('/admin', (req,res) => {
    // res.send(__dirname);
    // res.redirect('adminView.html');
+   
 })
 
 app.get('/registro', (req,res)=> {
