@@ -609,6 +609,29 @@ div.header{
     width: 30%;
 }
 
+/* Letras - contacto */
+
+.ml10 {
+    
+    font-weight: 900;
+    font-size: 2em;
+  }
+  
+  .ml10 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .ml10 .letter {
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+  }
+
 /* Boton enviar - contacto */
   button {
     margin: 20px;
