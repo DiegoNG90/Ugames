@@ -21,8 +21,7 @@ function mostrarJuegos(data){
 
     // lista_productos
    data.forEach((item)=>{
-   //console.log(`${serverUrl}${imagesPath}${item.imgJuego}`);
-    console.log(item)
+   console.log(`${serverUrl}${imagesPath}${item.imgJuego}`);
     listadojuegos.innerHTML+=`
     <div class="col-12 col-md-6 juegoconteiner">
         <div class="item shadow mb-4" data-id=${item.idJuego}>
