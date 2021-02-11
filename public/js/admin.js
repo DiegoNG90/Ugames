@@ -4,7 +4,6 @@ function solicitudJuegos(){
         
         mostrarJuegosAdm(response.data);
     })
-
 }
 
 solicitudJuegos();
@@ -40,6 +39,7 @@ function eliminarProducto(e){
 function modificarJuego(e){
     e.preventDefault();
     let idJuegoAEditar = parseInt(e.path[2].childNodes[1].innerText);
+    console.log(idJuegoAEditar)
     let precio = document.querySelector(`#costoActualJ${idJuegoAEditar}`).value;
     console.log(precio);
     console.log(idJuegoAEditar);
@@ -50,3 +50,6 @@ function modificarJuego(e){
     alert('datos enviados');
     location.reload();
 }
+
+
+

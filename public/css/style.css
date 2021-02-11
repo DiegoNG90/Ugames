@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Lato', sans-serif;
 }
 body{
     background-color: #343a40;
@@ -10,7 +10,7 @@ body{
 /* Navbar */
 .nav-link{
     color: white !important;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Lato', sans-serif;
 }
 .navbar-brand {
     color: white !important;
@@ -28,6 +28,10 @@ body{
     #navbarNav{
         justify-content: center !important;
     }
+}
+
+.campos-a-completar label{
+    margin: 0.2rem 0;
 }
 
 /* Carousel */
@@ -540,6 +544,13 @@ a span:nth-child(4){
     margin-left: -15px;
 }
 
+#modalCompra div div div{
+    margin: 0.2rem 0;
+}
+#modalCompra div div div div img{
+    width: 100%;
+}
+
 div#OR {
     height: 30px;
     width: 30px;
@@ -561,8 +572,8 @@ div#OR {
 h3{
     text-align: center;
     color: white !important;
-    font-family: 'Staatliches', cursive;
     margin-top: 3rem;
+    font
 }
 
 div.header{
@@ -663,6 +674,7 @@ div.header{
     width:100%;
     transition:800ms ease all;
   }
+
 
 /*MEDIA QUERIES*/
 
@@ -766,6 +778,7 @@ div.header{
 .container-fluid{
     justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 .container{
     margin-top: 3rem;
@@ -810,6 +823,11 @@ li{
     margin-top: 1.5rem;
 }
 
+.formulario-contacto{
+    margin: 0 auto;
+    width: 80%;
+}
+
 
 /*Catalogo*/
 
@@ -842,11 +860,19 @@ li{
 .item-details {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     margin: 20px 0px 15px;
 }
-.item-details .item-price {
-    margin-left: 2rem;
+
+
+.precioCadaProd{
+    display: flex;
+    flex-direction: column;
+}
+.precioCadaProd span{
+    display: flex;
+    flex-direction: row;
 }
   
 .imgdesc{
@@ -860,6 +886,42 @@ li{
 
 .item-details h4{
         color: white;
-        margin: 0 1rem;
+        margin: 0 0.3rem;
         text-align:justify;  
+}
+
+.item h3{
+    font-weight:bold;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.container-fluid .row label{
+    margin: 0.5rem 1rem;
+}
+.row div u{
+    font-weight: 700;
+}
+
+.oculto{
+    display: none;
+}
+
+#boton-filtro{
+    margin: 0;
+    padding-top: 0;
+}
+
+.campos-a-completar{
+    display: flex;
+    flex-direction: column;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
 }

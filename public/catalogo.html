@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ugames</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <!-- Favicon -->
@@ -59,18 +59,120 @@
             <div class="filtro d-flex justify-content-center">
                 <label id= "label-filtro" for="filtro-genero">Filtrar por género</label>
                 <select id="filtro-genero" class="form-select" name="generos" aria-label="Default select example">
-                    <option selected>Seleccione un genero</option>
-                    <option value="Accion">Accion</option>
-                    <option value="Suspenso">Suspenso</option>
-                    <option value="RPG">RPG</option>
+                    <option selected id="valorFiltro">Seleccione un genero</option>
+                    <option value="Estrategia">Estrategia</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Rol">Rol</option>
+                    <option value="Carreras">Carreras</option>
+                    <option value="Shooter">Shooter</option>
+                    <option value="MMO">MMO</option>
                 </select>
-                <i class="fas fa-filter"></i>
+                <button id="boton-filtro" onclick="filtrarJuegos(event)" class="btn"><i class="fas fa-filter"></i></button>
             </div>
             <!-- Tabla -->
 
             <div id="listadojuegos" class="row">
 
             </div>
+
+            <!-- Modal de "Pago" -->
+
+            <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModal">Proceso de compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  
+                  <!-- primer paso -->
+                  <div class="container-fluid" id="primerPasoCompra">
+                    <div class="row">
+                      <div class="col-md-4"><u>Título:</u></div>
+                      <div class="col-md-4"><p id="tituloJuego"></p></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6"><u>Elija forma de pago:</u></Elija></div>
+                    </div>
+
+                    <div class="row">
+                      <label for="cero">Debito: &nbsp;<input type="radio" id="debito" name="numero-binario" value="0"></label>
+                      <label for="uno">Crédito: &nbsp; <input type="radio" id="credito" name="numero-binario" value="1"></label>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12"><u>Medios de pago disponibles:</u></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12"> <img src="https://www.matelec.com.ar//img/cms/medios-de-pago-matelec.png" alt=""></div>
+                    </div>
+                   
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <label for="acuerdoReglasDeUso">
+                          <input type="checkbox" id="acuerdo" name="acuerdoReglasDeUso">
+                          &nbsp; &nbsp;Estoy de acuerdo con el reglamento de compra y usos
+                        </label>
+                        <div class="row">
+                          <div class="col-8 col-sm-6">
+                            <u>Total a abonar:</u>
+                          </div>
+                          <div class="col-4 col-sm-6">
+                            <p id="costoJuego">{precio}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer" id="primerFooter">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-light" onclick="continuarCompra(event)">Siguiente</button>
+                  </div>
+                  <!-- primer paso -->
+
+                  
+                  <!-- segundo paso -->
+                  <div class="container-fluid oculto" id="segundoPasoCompra">
+                    <div class="row">
+                      <div class="col-md-4"><u>Título:</u></div>
+                      <div class="col-md-4"><p id="tituloJuego"></p></div>
+                    </div>
+
+                    <div class="campos-a-completar">
+                      <label for="nombre">Nombre y apellido:</label><input type="text" id="nombre" placeholder="Como aparecen en la tarjeta" name="nombre">
+                    </div>
+
+                    <div class=" campos-a-completar">
+                      <label for="ntarjeta">N° de tarjeta:</label><input maxlength="16" placeholder="0000 0000 0000 0000" type="text" id="ntarjeta" name="ntarjeta">
+                    </div>
+
+                    <div class=" campos-a-completar">
+                      <label for="fechaVenci">Fecha de vencimiento:</label><input maxlength="4" placeholder="MMAA" type="text" id="fechaVenci" name="fechaVenci">
+                    </div>
+
+                    <div class="campos-a-completar">
+                      <label for="codSeg">Codigo de seguridad:</label><input maxlength="3" type="text" id="codSeg" name="codSeg" placeholder="Aparecen en el revez de la tarjeta (son 3 números)">
+                    </div>
+                   
+                  </div>
+
+                  <div class="modal-footer oculto" id="segundoFooter">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success"><a href="http://localhost:8080/descargar">Finalizar compra!</a></button>
+                  </div>
+                  <!-- segundo paso -->
+
+
+
+                  
+                </div>
+              </div>
+            </div>
+
 
         </div>
     </main>
@@ -85,5 +187,6 @@
     <script src="js/logout.js"></script>
     <script src="./js/filtro.js"></script>
     <script src="./js/cat.js"></script>
+    <script src="./js/pago.js"></script>
 </body>
 </html>
