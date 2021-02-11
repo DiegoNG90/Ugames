@@ -8,7 +8,8 @@ const juegosRouter = require('./routes/games');
 const imgRoutes = require('./routes/img');
 const {options} = require('./config/bdConfig')
 // //Passport y sessions
-const {passport,MySQLStore, session} = require('./config/passportConfig')
+const {passport,MySQLStore, session} = require('./config/passportConfig');
+const { setupMaster } = require('cluster');
 
 //Creamos la sqlstore 
 const sessionStore = new MySQLStore(options);
@@ -96,6 +97,12 @@ app.post('/registro', passport.authenticate('local.registro', {
     failureRedirect: "/",
     })
 );
+
+app.get('/descargar',function(req,res){
+    res.download(__dirname+'/installers/setup.txt');
+});
+
+
 //Ruta del form de login
 app.post('/login', (req,res,next)=>{
     passport.authenticate('local.login', (err,user,info)=>{

@@ -1,4 +1,4 @@
-console.log("Filtro conectado exitosamente");
+/*console.log("Filtro conectado exitosamente");
 
 const iconoFiltro = document.querySelector(".fa-filter");
 
@@ -90,4 +90,57 @@ iconoFiltro.addEventListener("click", () => {
 //     }
 //     generos.push(element.innerText)
 // })
-// console.log(generos);
+// console.log(generos);*/
+
+const iconoFiltro = document.querySelector(".fa-filter");
+
+function filtrarJuegos(e) {
+    e.preventDefault();
+    
+    // Cantidad de juegos  
+    let cantidadJuegos=e.path[3].children[2].childElementCount;
+
+    let i=0;
+    //Codigo que reestablece la vista de los juegos (por si el usuario filtra 2 veces)
+    while(i<cantidadJuegos){
+            var juegoAOcultar=document.querySelector(`#juego${i+1}`);
+            juegoAOcultar.classList.remove("oculto")
+        
+        i++;
+    }
+
+    //Valor que tomamos
+    const seleccion = document.querySelector(`#filtro-genero`).value;
+
+    if (seleccion==="Seleccione un genero"){
+        alert("Favor de elegir un tipo de juego a filtrar!");
+    }else{
+
+
+
+    // Valor a comparar                      *
+    //let j = e.path[3].children[2].children[3].children[0].children[2].children[0].children[0].children[1].innerText;
+
+
+    i=0;
+    
+    while(i<cantidadJuegos){
+        //var PRUEBA = (e.path[3].children[2].children[i].children[0].children[2].children[0].children[0].children[1].innerText);
+        //console.log(PRUEBA);
+
+        if ((e.path[3].children[2].children[i].children[0].children[2].children[0].children[0].children[1].innerText)===seleccion){
+            //console.log("Verdadero");
+        }else{
+           
+           
+            //console.log("False");
+            var juegoAOcultar=document.querySelector(`#juego${i+1}`);
+            juegoAOcultar.classList.add("oculto")
+        }
+
+
+        i++;
+    }
+    }
+    }
+

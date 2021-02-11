@@ -23,16 +23,24 @@ function mostrarJuegos(data){
    data.forEach((item)=>{
     console.log(`${serverUrl}${imagesPath}${item.imgJuego}`);
     listadojuegos.innerHTML+=`
-    <div class="col-12 col-md-6 juegoconteiner">
-        <div class="item shadow mb-4" data-id=${item.idJuego}>
+    <div class="col-12 col-md-6 juegoconteiner" id="juego${item.idJuego}">
+        <div class="item shadow mb-4" >
             <h3 class="item-title">${item.nombreJuego}</h3>
             <div class="imgdesc">
             <img class="item-image rounded img-fluid" src=${serverUrl}${imagesPath}${item.imgJuego}>
             <p>${item.descJuego}</p>
             </div>
             <div class="item-details">
-                <h4 class="item-price"><u>Precio</u>:&nbsp; &nbsp;${item.costoJuego}  $</h4>
-                <button class="item-button btn btn-success addToCart">AÑADIR AL CARRITO</button>
+            
+            <div class="precioCadaProd col-6">
+            
+            <span><h4 class="item-type"><u>Tipo</u>:</h4><h4>${item.tipoJuego}  </h4></span>
+            <span><h4 class="item-price"><u>Precio</u>:</h4><h4>${item.costoJuego}  $</h4></span>
+                </div>
+            
+                <div>
+                <button class="item-button btn btn-success" data-toggle="modal" data-target="#modalCompra" onclick="iniciarCompra(event)" type="button" >COMPRAR!</button>
+                </div>
             </div>
         </div>
     </div>`
