@@ -76,46 +76,48 @@
                         <ul class="nav nav-tabs card-header-tabs">
                             <li class="active nav-item" ><a class= "nav-link" href="#Login" data-toggle="tab" >Ingreso</a></li>
                             <li><a class= "nav-link" href="#Registration" data-toggle="tab">Registro</a></li>
+                            <li><a class= "nav-link" href="#Admin" data-toggle="tab">Admin</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active" id="Login">
                                 <!-- Login FORM -->
                                 <form action="http://localhost:8080/login" method="POST" role="form" class="form-horizontal">
-                                <div class="form-group1">
-                                    <label1 for="user" class="col-sm-2 control-label">
-                                        Usuario</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="username" id="user" required/>
+                                    <div class="form-group1">
+                                        <label1 for="user" class="col-sm-2 control-label">
+                                            Usuario</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="username" id="user" required/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group1">
-                                    <label1 for="contraseña" class="col-sm-2 control-label">
-                                        Contraseña</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" name="password" id="contraseña" required />
+                                    <div class="form-group1">
+                                        <label1 for="contraseña" class="col-sm-2 control-label">
+                                            Contraseña</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" name="password" id="contraseña" required />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group1 ">
+                                    <div class="form-group1 ">
+                                            
+                                        <div class="col-sm-10">
+                                            <p id="msg-error-login"></p>
+                                        </div>
                                         
-                                    <div class="col-sm-10">
-                                        <p id="msg-error-login"></p>
                                     </div>
-                                    
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <button id="login-btn" type="submit" class="btn btn-primary btn-sm">
-                                            Ingresar</button>
-                                        <a href="contrasenia.html">¿Olvidó su contraseña?</a>
-                                    </div>
-                                </div>               
+                                    
+                                        <div class="col-sm-2">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <button id="login-btn" type="submit" class="btn btn-primary btn-sm">
+                                                Ingresar</button>
+                                        </div>
+                                                
                                 </form>
                             </div>
+
+
                             <div class="tab-pane" id="Registration">
                                 <!-- Registro FORM -->
                                 <form role="form" action="http://localhost:8080/registro" method="POST" class="form-horizontal">
@@ -153,12 +155,52 @@
                                                 Registrarse </button>
                                         </div>
                                     </div>
-                                    </form>
+                                </form>
                             </div>
-                        </div>
-                        <div id="OR" class="hidden-xs">
-                            O</div>
+                        
+                        
+                            <div class="tab-pane" id="Admin">
+                                <!-- Admin Login FORM -->
+                                <form action="http://localhost:8080/admin" method="POST" role="form" class="form-horizontal">
+                                    <div class="form-group1">
+                                        <label1 for="userAdm" class="col-sm-2 control-label">
+                                            Admin</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="username" id="userAdm" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group1">
+                                        <label1 for="contraseñaAdm" class="col-sm-2 control-label">
+                                            Contraseña</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" name="password" id="contraseñaAdm" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group1 ">
+                                            
+                                        <div class="col-sm-10">
+                                            <p id="msg-error-admin"></p>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <button id="login-btn" type="submit" class="btn btn-primary btn-sm">
+                                                Ingresar</button>
+                                        </div>
+                                    </div>               
+                                </form>
+                            </div>
+                           
+                        
+                            <!-- <div id="OR" class="hidden-xs">
+                                O</div>
                     </div>
+
                     <div class="col-md-4">
                         <div class="row text-center sign-with">
                             <div class="col-md-12">
@@ -171,7 +213,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
                 </div>
             </div>
         </div>
