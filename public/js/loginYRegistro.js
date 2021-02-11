@@ -1,29 +1,28 @@
+let data;
+async function solicitudUsers(){
+    data = await axios.get('http://localhost:8080/users')
+    .then(response => response.data)
+    .catch((err)=> console.log(err))
+}
+
+solicitudUsers();
+console.log(data);
 
 function registrarse(e){
     e.preventDefault();
     let username = document.querySelector('#userReg').value;
     let password = document.querySelector('#passwordReg').value;
     //Faltarían validaciones desde el Front
-    function solicitudUsers(){
-        let cantidadRepeticiones = 0;
-        axios.get('http://localhost:8080/users')
-        .then( (response)=>{
-            console.log( response.data);
-            let dataArr = response.data;
-            dataArr.forEach(element => {
-                if(element.username === username){
-                    cantidadRepeticiones++;
-                }else{
-                    
-                }
+    let cantidadRepeticiones = 0;
+    let dataArr = data;
 
-            });
-        })
-        return cantidadRepeticiones;
-    }
-    const cantidadRepeticiones =  solicitudUsers(); // Me da undefined
+    dataArr.forEach(element => {
+        if(element.username === username){
+            cantidadRepeticiones++;
+        }
+    })
     
-    if(cantidadRepeticiones>0){
+    if(cantidadRepeticiones === 0){
         axios.post('http://localhost:8080/registro',{
             username: username,
             password: password,
