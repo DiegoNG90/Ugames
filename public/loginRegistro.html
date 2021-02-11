@@ -86,14 +86,14 @@
                                     <label1 for="user" class="col-sm-2 control-label">
                                         Usuario</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="username" id="user" />
+                                        <input type="text" class="form-control" name="username" id="user" required/>
                                     </div>
                                 </div>
                                 <div class="form-group1">
                                     <label1 for="contraseña" class="col-sm-2 control-label">
                                         Contraseña</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="password" id="contraseña" />
+                                        <input type="password" class="form-control" name="password" id="contraseña" required />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -116,7 +116,7 @@
                                         <div class="col-sm-10">
                                             <div class="row">
                                                 <div class="col-md-9">
-                                                    <input type="text" name="username" class="form-control" id="userReg" />
+                                                    <input type="text" name="username" class="form-control" id="userReg" required/>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,17 +125,23 @@
                                         <label for="passwordReg" class="col-sm-2 control-label">
                                             Contraseña</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="password" class="form-control" id="passwordReg"/>
+                                            <input type="password" name="password" class="form-control" id="passwordReg" required/>
                                         </div>
                                     </div>
+                                    <div class="form-group1 ">
+                                        
+                                        <div class="col-sm-10">
+                                            <p id="msg-error-registro"></p>
+                                        </div>
+                                        
+                                    </div>
+
                                     <div class="row">
                                         <div class="col-sm-2">
                                         </div>
                                         <div class="col-sm-10">
                                             <button type="submit" id="reg-btn" class="btn btn-primary btn-sm">
                                                 Registrarse </button>
-                                            <button type="button" class="btn btn-danger btn-sm">
-                                                Cancelar</button>
                                         </div>
                                     </div>
                                     </form>
@@ -169,7 +175,6 @@
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      <script src='js/registro.js'></script>
       <!-- Axios -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
       <!-- JS propio -->

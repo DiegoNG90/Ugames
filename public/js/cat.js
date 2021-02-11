@@ -21,13 +21,13 @@ function mostrarJuegos(data){
 
     // lista_productos
    data.forEach((item)=>{
-    console.log(`${serverUrl}${imagesPath}${item.imgJuego}`);
+   console.log(`${serverUrl}${imagesPath}${item.imgJuego}`);
     listadojuegos.innerHTML+=`
     <div class="col-12 col-md-6 juegoconteiner" id="juego${item.idJuego}">
         <div class="item shadow mb-4" >
             <h3 class="item-title">${item.nombreJuego}</h3>
             <div class="imgdesc">
-            <img class="item-image rounded img-fluid" src=${serverUrl}${imagesPath}${item.imgJuego}>
+            <img class="item-image rounded img-fluid" src=${imagesPath}${item.imgJuego}>
             <p>${item.descJuego}</p>
             </div>
             <div class="item-details">

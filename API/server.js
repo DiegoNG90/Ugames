@@ -4,6 +4,7 @@ const port = process.env.PORT || 8080;
 const path = require('path'); // No se si se usa :'(
 const hbs = require('hbs'); // No se usa; ver branch hbs
 const cors = require('cors');
+const userRouter = require('./routes/users')
 const juegosRouter = require('./routes/games');
 const imgRoutes = require('./routes/img');
 const {options} = require('./config/bdConfig')
@@ -24,7 +25,7 @@ app.use(session({
     saveUninitialized: true,
     store: sessionStore
 }))
-app.use(express.static(__dirname+'/public'));
+// app.use(express.static(__dirname+'/public'));
 app.use(express.json()); // permite que mi app acepte json del lado del cliente
 app.use(express.urlencoded({extended:true})); // permite interprete los datos que vienen del cliente
 //Middlewares de passport
@@ -37,7 +38,7 @@ function isLogedIn(req,res,next){
         return next();
     }else{
         console.log("El user está intenando acceder al index/landing sin permisos y por eso lo vamos a redirigir");
-        res.redirect('loginRegistro.html');
+        res.render('/login');
     }
 }
 function isNotLogedIn(req,res,next){
@@ -51,40 +52,29 @@ function isNotLogedIn(req,res,next){
 //Routers
 app.use('/games',juegosRouter);
 app.use('/images', imgRoutes);
+app.use('/users', userRouter);
 
 //Rutas
 app.get('/', isLogedIn,(req,res) => {
-    res.redirect("landing.html")
+    res.send(200).send("registro y login")
 })
 app.get('/landing', isLogedIn,(req,res) => {
-    res.redirect("landing.html")
+    res.status(200).send("landing")
 })
 app.get('/contacto',isLogedIn, (req,res)=> {
-    res.redirect("contacto.html");
+    res.status(200).send("contacto");
 })
 app.get('/catalogo', isLogedIn,(req,res)=> {
     res.redirect("catalogo.html")
 })
-//No funciona
-app.get('/landing.html', isNotLogedIn,(req,res) => {
-    res.redirect("landing.html")
-})
-//No funciona
-app.get('/contacto.html',isLogedIn, (req,res)=> {
-    res.redirect("contacto.html");
-})
-//No funciona
-app.get('/catalogo.html',isLogedIn, (req,res)=> {
-    res.redirect("contacto.html");
-})
-
 app.get('/login', isNotLogedIn, (req,res)=> {
-    res.redirect('login.html');
+    res.status(200).send("login");
+    // res.redirect('/login');
 })
 
 app.get('/admin', (req,res) => {
    // res.send(__dirname);
-   res.redirect('adminView.html');
+   // res.redirect('adminView.html');
 })
 
 app.get('/registro', (req,res)=> {
@@ -93,8 +83,8 @@ app.get('/registro', (req,res)=> {
 
 //Ruta del formulario de registro
 app.post('/registro', passport.authenticate('local.registro', {
-    successRedirect:"/registro",
-    failureRedirect: "/",
+    successRedirect:"/",
+    failureRedirect: "/login",
     })
 );
 
@@ -119,7 +109,7 @@ app.post('/login', (req,res,next)=>{
 //Ruta del logout
 app.get('/logout', (req,res)=>{
     req.logout();
-    res.redirect('loginRegistro.html')
+    res.redirect('/login')
 })
 
 app.listen(port, ()=> console.log("Escuchando en puerto " + port));
