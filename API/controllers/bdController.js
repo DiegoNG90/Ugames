@@ -13,15 +13,3 @@ const obtenerUsers = (req,res) => {
 module.exports = {
     obtenerUsers
 }
-
-const obtenerAdmins = (req,res) => {
-    conexion_bd.query('SELECT * from admins', (err,results)=> {
-        if (err)throw err;
-        res.send(results)
-    })
-}
-
-module.exports = {
-    obtenerUsers,
-    obtenerAdmins
-}

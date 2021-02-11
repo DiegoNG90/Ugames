@@ -1,8 +1,8 @@
 const express = require('express');
-const admins_controller = require('../controllers/bdController')
+const admins_controller = require('../controllers/adminController')
 const adminsRouter = express.Router();
 
-adminsRouter.get('/', admins_controller.obtenerUsers);
+adminsRouter.get('/', admins_controller.obtenerAdmins);
 
 
 module.exports = adminsRouter;
