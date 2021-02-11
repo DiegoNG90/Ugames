@@ -24,11 +24,7 @@ body{
     font-family: 'Staatliches', cursive;
 }
 
-@media (min-width: 300px) and (max-width: 990px){
-    #navbarNav{
-        justify-content: center !important;
-    }
-}
+
 
 .campos-a-completar label{
     margin: 0.2rem 0;
@@ -947,4 +943,8 @@ button a{
 a:hover{
     text-decoration: none;
     color: white;
+}
+
+.container h1{
+text-align: center;
 }
