@@ -4,6 +4,7 @@ const port = process.env.PORT || 8080;
 const path = require('path'); // No se si se usa :'(
 const hbs = require('hbs'); // No se usa; ver branch hbs
 const cors = require('cors');
+const userRouter = require('./routes/users')
 const juegosRouter = require('./routes/games');
 const imgRoutes = require('./routes/img');
 const {options} = require('./config/bdConfig')
@@ -50,6 +51,7 @@ function isNotLogedIn(req,res,next){
 //Routers
 app.use('/games',juegosRouter);
 app.use('/images', imgRoutes);
+app.use('/users', userRouter);
 
 //Rutas
 app.get('/', isLogedIn,(req,res) => {
