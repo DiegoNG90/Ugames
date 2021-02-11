@@ -8,6 +8,11 @@ body{
     background-color: #343a40;
 }
 /* Navbar */
+
+.nav-link.active{
+    background-color: black !important; 
+}
+
 .nav-link{
     color: white !important;
     font-family: 'Lato', sans-serif;
@@ -728,6 +733,14 @@ div.header{
       }
     .imagen {
         margin-left: 1%;
+    }
+
+
+}
+
+@media (max-width:992){
+    #listadojuegos div{
+        flex: 0 0 100%;
     }
 }
 
