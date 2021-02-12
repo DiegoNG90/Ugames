@@ -50,24 +50,33 @@ function logIn(e){
     let password = document.querySelector('#contraseña').value;
     let cantidadRepeticiones = 0;
     let dataArr = data;
+    let statusPass = false;
 
     dataArr.forEach(element => {
         if(element.username === username){
             cantidadRepeticiones++;
+            if(element.password === password){
+                statusPass = true;
+
+            }
         }
     })
     if (cantidadRepeticiones === 0) {
         let $errorLogin = document.querySelector('#msg-error-login');
-            $errorLogin.style.color = "red";
-            $errorLogin.innerHTML = "El usuario ingresado no existe. Por favor, vaya a la pestaña de REGISTRO para registrarse."
-    } else {
+        $errorLogin.style.color = "red";
+        $errorLogin.textContent = "El usuario ingresado no existe. Por favor, vaya a la pestaña de REGISTRO para registrarse."
+    } else if(statusPass === false){
+        let $errorLogin = document.querySelector('#msg-error-login');
+        $errorLogin.style.color = "red";
+        $errorLogin.textContent = "La contraseña es incorrecta"
+    }else {
         axios.post('http://localhost:8080/login',{
             username: username,
             password: password
         })
         .then((response)=>{
             console.log(response)
-            if(response.data === "Te has logueado"){
+            if(response.status === 200){
                 console.log(response.data);
                 console.log("Respuesta 200, el back te redirigió a landing.html")
                 window.location = 'landing.html';
@@ -76,9 +85,8 @@ function logIn(e){
         })
         .catch((error)=>{
             console.log(error)
-        })
-        
-    }
+        })        
+    }    
 }
 document.querySelector('#login-btn').addEventListener('click',logIn);
 
