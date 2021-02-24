@@ -99,12 +99,12 @@ function filtrarJuegos(e) {
     
     // Cantidad de juegos  
     let cantidadJuegos=e.path[3].children[2].childElementCount;
-
     let i=0;
     //Codigo que reestablece la vista de los juegos (por si el usuario filtra 2 veces)
     while(i<cantidadJuegos){
             var juegoAOcultar=document.querySelector(`#juego${i+1}`);
-            juegoAOcultar.classList.remove("oculto")
+            //console.log(juegoAOcultar);
+            juegoAOcultar.classList.remove("oculto");
         
         i++;
     }
