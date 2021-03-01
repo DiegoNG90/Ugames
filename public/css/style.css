@@ -7,6 +7,10 @@
 body{
     background-color: #343a40;
 }
+
+#bodyCat{
+    overflow: hidden;
+}
 /* Navbar */
 
 .nav-link.active{
@@ -56,9 +60,6 @@ h5{
 }
 
 /* Tabla de catalogo */
-.oculto{
-    display:none;
-}
 th{
     color: rgba(255, 255, 255, 0.822);
     background-color: crimson;

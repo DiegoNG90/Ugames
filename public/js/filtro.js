@@ -104,7 +104,8 @@ function filtrarJuegos(e) {
     //Codigo que reestablece la vista de los juegos (por si el usuario filtra 2 veces)
     while(i<cantidadJuegos){
             var juegoAOcultar=document.querySelector(`#juego${i+1}`);
-            juegoAOcultar.classList.remove("oculto")
+            //console.log(juegoAOcultar);
+            juegoAOcultar.classList.remove("oculto");
         
         i++;
     }
