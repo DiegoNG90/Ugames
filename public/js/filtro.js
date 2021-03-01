@@ -92,14 +92,14 @@ iconoFiltro.addEventListener("click", () => {
 // })
 // console.log(generos);*/
 
-const iconoFiltro = document.querySelector(".fa-filter");
+// const iconoFiltro = document.querySelector("boton-filtro");
 
 function filtrarJuegos(e) {
     e.preventDefault();
     
+    // console.log(e);
     // Cantidad de juegos  
-    let cantidadJuegos=e.path[3].children[2].childElementCount;
-
+    let cantidadJuegos = e.path[3].children[2].childElementCount;
     let i=0;
     //Codigo que reestablece la vista de los juegos (por si el usuario filtra 2 veces)
     while(i<cantidadJuegos){
