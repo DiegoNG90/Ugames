@@ -27,7 +27,7 @@ function mostrarJuegos(data){
         <div class="item shadow mb-4" >
             <h3 class="item-title">${item.nombreJuego}</h3>
             <div class="imgdesc">
-            <img class="item-image rounded img-fluid" src=${imagesPath}${item.imgJuego}>
+            <img class="item-image rounded img-fluid" src=${serverUrl}${imagesPath}${item.imgJuego}>
             <p>${item.descJuego}</p>
             </div>
             <div class="item-details">
